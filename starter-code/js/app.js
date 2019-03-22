@@ -11,6 +11,7 @@ Cart.prototype.addItem = function(product, quantity) {
   this.quantity = quantity;
   var x = new CartItem(product, quantity);
   this.items.push(x);
+
 };
 
 Cart.prototype.saveToLocalStorage = function() {
@@ -27,6 +28,7 @@ var CartItem = function(product, quantity) {
   this.product = product;
   this.quantity = quantity;
 };
+
 
 // Product contructor.
 var Product = function(filePath, name) {

@@ -9,12 +9,14 @@ var cart = new Cart([]);
 // (the things in the Product.allProducts array) into the drop down list.
 function populateForm() {
 
+
   var selectElement = document.getElementById('items');
   for (var i in Product.allProducts) {
     var optionCreator = document.createElement('option');
     optionCreator.textContent = Product.allProducts[i].name;
     selectElement.appendChild(optionCreator);
   }
+
 
 }
 
@@ -23,7 +25,9 @@ function populateForm() {
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
 
+
   event.preventDefault();
+
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
@@ -33,11 +37,13 @@ function handleSubmit(event) {
 }
 
 function addSelectedItemToCart() {
+
   console.log('hey');
   var itemsSelected = document.getElementById('items').value;
   var quantitySelected = document.getElementById('quantity').value;
   cart.addItem(itemsSelected, quantitySelected);
   console.log(cart);
+
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
